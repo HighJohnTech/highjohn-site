@@ -1,0 +1,147 @@
+---
+layout: default
+title: "Work | High John Tech"
+description: "Real client work, HJT-owned projects, and working demonstrations — clearly labeled so you know exactly what you're looking at."
+permalink: /work/
+---
+
+<section class="contact-sec" id="work-intro">
+  <div class="wrap">
+    <span class="sec-kicker mono rv">Work</span>
+    <h2 class="rv d1">What's actually been built.</h2>
+    <p class="lead work-hero-lead rv d2">Client systems, HJT builds and implementations, and working demonstrations — clearly labeled so you know exactly what you're looking at. A demo is never presented as a client result, and HJT-owned work is never presented as a client engagement.</p>
+  </div>
+</section>
+
+<section class="work-section" id="client-work">
+  <div class="wrap">
+    <div class="work-section-num rv"><span>01</span><span class="sec-kicker mono" style="margin-bottom:0;">Client Work</span></div>
+    <h2 class="rv d1" style="font-size:clamp(24px,4vw,36px);margin-bottom:10px;">Built for real businesses and organizations.</h2>
+    <div class="work-grid-full rv d2">
+      {% for c in site.data.work.client_work %}
+      <div class="work-card">
+        <div class="work-card-visual">
+          <div class="work-card-chrome">
+            <span class="work-card-chrome-dot"></span><span class="work-card-chrome-dot"></span><span class="work-card-chrome-dot"></span>
+            <span class="work-card-chrome-domain">{{ c.domain_label }}</span>
+          </div>
+          {% if c.status == "prototype" %}<span class="work-card-status">Prototype</span>{% endif %}
+          {% if c.image and c.image != "" %}
+          <img src="{{ c.image | relative_url }}" alt="{{ c.image_alt }}" loading="lazy" width="800" height="500">
+          {% else %}
+          <div class="work-card-visual-placeholder"><span>Screenshot pending</span></div>
+          {% endif %}
+        </div>
+        <div class="work-card-body">
+          <span class="work-type">Client Work</span>
+          <h3>{{ c.name }}</h3>
+          <span class="work-card-category">{{ c.category }}</span>
+          <p>{{ c.description }}</p>
+          {% if c.url and c.url != "" %}
+          <a class="work-card-link" href="{{ c.url }}" target="_blank" rel="noopener noreferrer">{{ c.cta_label }} ↗</a>
+          {% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="work-section" id="hjt-projects">
+  <div class="wrap">
+    <div class="work-section-num rv"><span>02</span><span class="sec-kicker mono" style="margin-bottom:0;">HJT Builds &amp; Implementations</span></div>
+    <h2 class="rv d1" style="font-size:clamp(24px,4vw,36px);margin-bottom:10px;">Systems HJT builds, customizes, and operates.</h2>
+    <div class="work-grid-full rv d2">
+      {% for p in site.data.work.hjt_projects %}
+      <div class="work-card">
+        <div class="work-card-visual">
+          <div class="work-card-chrome">
+            <span class="work-card-chrome-dot"></span><span class="work-card-chrome-dot"></span><span class="work-card-chrome-dot"></span>
+            <span class="work-card-chrome-domain">{{ p.category }}</span>
+          </div>
+          {% if p.status == "in_development" %}<span class="work-card-status">In Development</span>{% endif %}
+          {% if p.image == "abstract-diagram" %}
+          <div class="work-diagram">
+            <div class="work-diagram-node">Business Input</div>
+            <div class="work-diagram-arrow">↓</div>
+            <div class="work-diagram-node">AI Orchestration</div>
+            <div class="work-diagram-arrow">↓</div>
+            <div class="work-diagram-node">Specialized Agents</div>
+            <div class="work-diagram-arrow">↓</div>
+            <div class="work-diagram-node">Tools + Automation</div>
+            <div class="work-diagram-arrow">↓</div>
+            <div class="work-diagram-node">Business Output</div>
+          </div>
+          {% elsif p.image and p.image != "" %}
+          <img src="{{ p.image | relative_url }}" alt="{{ p.image_alt }}" loading="lazy" width="800" height="500">
+          {% else %}
+          <div class="work-card-visual-placeholder"><span>Screenshot pending</span></div>
+          {% endif %}
+        </div>
+        <div class="work-card-body">
+          {% if p.type == "hjt_internal" %}
+          <span class="work-type internal">HJT Internal System</span>
+          {% elsif p.type == "hjt_implementation" %}
+          <span class="work-type implementation">HJT Implementation</span>
+          {% else %}
+          <span class="work-type project">HJT Project</span>
+          {% endif %}
+          <h3>{{ p.name }}</h3>
+          <span class="work-card-category">{{ p.category }}</span>
+          <p>{{ p.description }}</p>
+          {% if p.supporting_line %}<p style="font-size:12px;color:var(--ti-dim);">{{ p.supporting_line }}</p>{% endif %}
+          {% if p.preview_url and p.preview_url != "" %}
+          <a class="work-card-link" href="{{ p.preview_url }}" target="_blank" rel="noopener noreferrer">{{ p.cta_label }} ↗</a>
+          {% elsif p.github_url and p.github_url != "" %}
+          <a class="work-card-link" href="{{ p.github_url }}" target="_blank" rel="noopener noreferrer">View on GitHub ↗</a>
+          {% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="work-section" id="hjt-demos">
+  <div class="wrap">
+    <div class="work-section-num rv"><span>03</span><span class="sec-kicker mono" style="margin-bottom:0;">HJT Demos</span></div>
+    <h2 class="rv d1" style="font-size:clamp(24px,4vw,36px);margin-bottom:10px;">Proof of capability, not a client engagement.</h2>
+    <div class="work-grid-full rv d2">
+      {% for d in site.data.work.demos %}
+      <div class="work-card">
+        <div class="work-card-visual">
+          <div class="work-card-chrome">
+            <span class="work-card-chrome-dot"></span><span class="work-card-chrome-dot"></span><span class="work-card-chrome-dot"></span>
+            <span class="work-card-chrome-domain">{{ d.category }}</span>
+          </div>
+          {% if d.image and d.image != "" %}
+          <img src="{{ d.image | relative_url }}" alt="{{ d.image_alt }}" loading="lazy" width="800" height="500">
+          {% else %}
+          <div class="work-card-visual-placeholder"><span>Screenshot pending</span></div>
+          {% endif %}
+        </div>
+        <div class="work-card-body">
+          <span class="work-type demo">HJT Demo</span>
+          <h3>{{ d.name }}</h3>
+          <span class="work-card-category">{{ d.category }}</span>
+          <p>{{ d.description }}</p>
+          {% if d.url_relative %}
+          <a class="work-card-link" href="{{ d.url_relative | relative_url }}">{{ d.cta_label }} →</a>
+          {% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="final" id="work-final">
+  <div class="wrap">
+    <span class="sec-kicker mono rv">Not sure which kind of system your business needs?</span>
+    <h2 class="rv d1">Start with a <span class="thin">Systems Audit.</span></h2>
+    <div class="cta-row rv d2" style="display:flex;gap:16px;flex-wrap:wrap;align-items:center;">
+      {% include fit-call-cta.html label="Book a Free 15-Min Fit Call" %}
+      {% include cta-book.html label="Book a Systems Audit — $222" service="Systems Audit" %}
+    </div>
+  </div>
+</section>

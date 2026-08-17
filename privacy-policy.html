@@ -1,137 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+---
+layout: default
+title: "Privacy Policy | High John Tech"
+description: "High John Tech's privacy policy, including SMS/text messaging data practices."
+---
 
-  <title>Privacy Policy | High John Tech</title>
-
-  <style>
-    :root {
-      --deep: #0C0C1E;
-      --indigo: #12122A;
-      --paper: #EEEDF5;
-      --text: #B7BBCD;
-      --cyan: #00CED1;
-      --lime: #ADFF2F;
-      --border: rgba(154, 160, 184, 0.2);
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      background: var(--deep);
-      color: var(--paper);
-      font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.7;
-    }
-
-    header {
-      background: var(--indigo);
-      border-bottom: 1px solid var(--border);
-      padding: 22px 24px;
-    }
-
-    header .wrap {
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    header a {
-      color: var(--paper);
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    main {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 55px 24px 80px;
-    }
-
-    h1 {
-      color: var(--paper);
-      font-size: clamp(34px, 6vw, 56px);
-      line-height: 1.1;
-      margin: 0 0 12px;
-    }
-
-    h2 {
-      color: var(--cyan);
-      margin-top: 42px;
-      margin-bottom: 14px;
-      font-size: 24px;
-    }
-
-    h3 {
-      color: var(--lime);
-      margin-top: 28px;
-      margin-bottom: 10px;
-      font-size: 18px;
-    }
-
-    p,
-    li {
-      color: var(--text);
-    }
-
-    ul {
-      padding-left: 24px;
-    }
-
-    .effective-date {
-      color: var(--cyan);
-      margin-bottom: 35px;
-    }
-
-    .notice {
-      background: var(--indigo);
-      border: 1px solid var(--border);
-      border-left: 4px solid var(--lime);
-      padding: 22px;
-      margin: 30px 0;
-    }
-
-    a {
-      color: var(--lime);
-    }
-
-    footer {
-      background: var(--indigo);
-      border-top: 1px solid var(--border);
-      padding: 28px 24px;
-    }
-
-    footer .wrap {
-      max-width: 900px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      gap: 18px;
-      flex-wrap: wrap;
-    }
-
-    footer a {
-      color: var(--text);
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      color: var(--cyan);
-    }
-  </style>
-</head>
-
-<body>
-
-  <header>
-    <div class="wrap">
-      <a href="index.html">← Back to High John Tech</a>
-    </div>
-  </header>
+{% include pp-style.html %}
 
   <main>
     <h1>Privacy Policy</h1>
@@ -231,7 +104,7 @@
     <ul>
       <li>
         Reply "HELP" for assistance or contact us at
-        <a href="mailto:hello@highjohn.tech">hello@highjohn.tech</a>
+        <a href="mailto:{{ site.data.company.email }}">{{ site.data.company.email }}</a>
       </li>
       <li>Customer support is available during regular business hours</li>
     </ul>
@@ -377,8 +250,8 @@
 
     <p>
       <strong>High John Tech</strong><br>
-      Phone: <a href="tel:+13134664045">(313) 466-4045</a><br>
-      Email: <a href="mailto:hello@highjohn.tech">hello@highjohn.tech</a><br>
+      Phone: <a href="tel:{{ site.data.company.phone_e164 }}">{{ site.data.company.phone_display }}</a><br>
+      Email: <a href="mailto:{{ site.data.company.email }}">{{ site.data.company.email }}</a><br>
       Website: <a href="https://highjohn.tech">https://highjohn.tech</a>
     </p>
 
@@ -386,18 +259,3 @@
       By using our website and services, you consent to this Privacy Policy.
     </p>
   </main>
-
-  <footer>
-    <div class="wrap">
-      <span>© 2026 High John Tech</span>
-
-      <span>
-        <a href="privacy-policy.html">Privacy Policy</a>
-        &nbsp;·&nbsp;
-        <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
-      </span>
-    </div>
-  </footer>
-
-</body>
-</html>

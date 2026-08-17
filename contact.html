@@ -1,0 +1,67 @@
+---
+layout: default
+title: "Contact | High John Tech"
+description: "Reach High John Tech directly, book a free 15-minute Technology Fit Call, or book a Systems Audit."
+permalink: /contact/
+---
+
+<section class="contact-sec" id="contact">
+  <div class="wrap">
+    <span class="sec-kicker mono rv">Contact</span>
+    <h2 class="rv d1">Reach out directly.</h2>
+    <p class="lead rv d2">Not sure where to start? Use a free 15-minute Technology Fit Call to show us what you're trying to improve — we'll tell you whether HJT is a fit and point you to the right next step. Ready to skip straight to a real diagnosis? Book the Systems Audit below.</p>
+    <div class="contact-grid rv d2">
+      <div class="contact-card" style="grid-column:1/-1;background:rgba(0,206,209,0.05);border-color:rgba(0,206,209,0.25);">
+        <span class="mono" style="color:var(--cyan);">Not sure where to start?</span>
+        <span style="font-size:15px;color:var(--paper);display:block;margin:6px 0 14px;">A free 15-minute call to understand the problem and point you to the right next step — not a free audit, not free consulting.</span>
+        {% include fit-call-cta.html label="Book a Free 15-Min Fit Call" %}
+      </div>
+      <div class="contact-card">
+        <span class="mono">Phone</span>
+        <a href="tel:{{ site.data.company.phone_e164 }}">{{ site.data.company.phone_display }}</a>
+      </div>
+      <div class="contact-card">
+        <span class="mono">Email</span>
+        <a href="mailto:{{ site.data.company.email }}">{{ site.data.company.email }}</a>
+      </div>
+      <div class="contact-card">
+        <span class="mono">Based in</span>
+        <span style="font-size:15px;color:var(--paper);">{{ site.data.company.location_display }}</span>
+        <small style="display:block;margin-top:6px;color:var(--ti);font-size:12px;">{{ site.data.company.location_note }}</small>
+      </div>
+      <div class="contact-card" style="grid-column:1/-1;">
+        <span class="mono">Follow</span>
+        {% include social-links.html %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="difference">
+  <div class="wrap">
+    <span class="sec-kicker mono rv">Not sure where to start?</span>
+    <h2 class="rv d1">Tell us what's actually going on — we'll point you the right direction.</h2>
+    <div class="diff-grid rv d2">
+      <div class="diff-card">
+        <h3>Have a specific problem</h3>
+        <p style="color:var(--ti);font-size:14px;">Missed calls, a slow website, no follow-up system — start with the <a href="{{ '/services/' | relative_url }}" style="color:var(--cyan);">services overview</a> to find the closest match.</p>
+      </div>
+      <div class="diff-card">
+        <h3>Want a diagnosis first</h3>
+        <p style="color:var(--ti);font-size:14px;">Not sure what's actually broken yet — start with the <a href="{{ '/systems-audit/' | relative_url }}" style="color:var(--cyan);">Systems Audit</a>.</p>
+      </div>
+      <div class="diff-card">
+        <h3>Ready for the full build</h3>
+        <p style="color:var(--ti);font-size:14px;">Know you need the whole operating system — book a call directly below.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="final" id="book-contact">
+  <div class="wrap">
+    <span class="sec-kicker mono rv">Or just book it</span>
+    <h2 class="rv d1">Skip the back-and-forth.</h2>
+    {% include cta-book.html label="Book a Systems Audit" service="Systems Audit" extra_class="rv d2" %}
+  </div>
+</section>

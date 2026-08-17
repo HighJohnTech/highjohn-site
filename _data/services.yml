@@ -1,0 +1,63 @@
+- id: ai-consulting
+  slug: "ai-consulting"
+  page_live: true
+  name: "AI consulting &amp; strategy"
+  blurb: "Business AI assessments, architecture, implementation planning, and hands-on mentorship for founders and teams who want to use AI effectively — not an online guru course."
+  cta_label: "→ Discuss AI Consulting"
+  param: "AI Consulting & Strategy"
+
+- id: web-design-development
+  slug: "web-design-development"
+  page_live: true
+  name: "Website design &amp; development"
+  blurb: "Modern business websites built around positioning, conversion, SEO fundamentals, lead capture, and integrations. Hire us just to build the site — that's a complete engagement on its own."
+  cta_label: "→ Discuss Your Website"
+  param: "Website Design & Development"
+
+- id: custom-apps-software
+  slug: "custom-apps-software"
+  page_live: true
+  name: "Custom apps &amp; software"
+  blurb: "Web applications, internal tools, dashboards, portals, and API-connected business utilities — available standalone, not only as part of a larger build."
+  cta_label: "→ Discuss Your App"
+  param: "Custom Apps & Software"
+
+- id: ai-agents-front-desk
+  slug: "ai-agents-front-desk"
+  page_live: true
+  name: "AI agents &amp; AI front desk"
+  blurb: 'Voice agents, chat agents, lead qualification, appointment scheduling, and internal AI assistants that handle the work between "someone reaches out" and "someone follows up."'
+  cta_label: "→ Discuss AI Agents"
+  param: "AI Agents & AI Front Desk"
+
+- id: automation-crm
+  slug: "automation-crm"
+  page_live: true
+  name: "Automation &amp; CRM systems"
+  blurb: "Workflow automation, CRM architecture, lead pipelines, follow-up systems, and internal notifications. The business result is the product — the tools underneath are just how we build it."
+  cta_label: "→ Discuss Automation"
+  param: "Automation & CRM Systems"
+
+- id: cybersecurity
+  slug: "cybersecurity"
+  page_live: true
+  name: "Cybersecurity &amp; secure infrastructure"
+  blurb: "Security-conscious system architecture, access controls, identity and permissions, secure implementation, and technology risk identification — built in from day one, not bolted on."
+  cta_label: "→ Discuss Security"
+  param: "Cybersecurity & Secure Infrastructure"
+
+- id: marketing-revenue-systems
+  slug: "marketing-revenue-systems"
+  page_live: true
+  name: "Marketing &amp; revenue systems"
+  blurb: "The technology underneath marketing: funnels, lead capture, customer journeys, landing pages, and campaign infrastructure. We architect the system, not the ad copy."
+  cta_label: "→ Discuss Revenue Systems"
+  param: "Marketing & Revenue Systems"
+
+- id: technology-partnership
+  slug: "technology-partnership"
+  page_live: true
+  name: "Ongoing technology partnership"
+  blurb: "System optimization, infrastructure improvement, business intelligence, and fractional technology leadership for businesses that want a standing partner, not a one-time project."
+  cta_label: "→ Discuss a Partnership"
+  param: "Ongoing Technology Partnership"

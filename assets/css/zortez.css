@@ -1,0 +1,134 @@
+/* ==========================================================================
+   ZORTEZ — AI Concierge
+   Layer scale (deliberate, matches nav:100 / film-grain:200 already in main.css):
+     300 — launcher      400 — expanded panel      500 — reserved (future modals)
+   ========================================================================== */
+
+.zortez-root{position:fixed;inset:auto 20px 20px auto;z-index:300;font-family:'Archivo',sans-serif;}
+
+/* ---------- Launcher (minimized state, every page) ---------- */
+.zortez-launcher{
+  display:none;align-items:center;gap:10px;
+  background:var(--indigo-2);border:1px solid rgba(154,160,184,0.25);border-radius:999px;
+  padding:6px 16px 6px 6px;cursor:pointer;color:var(--paper);
+  box-shadow:0 8px 24px rgba(0,0,0,0.35);
+  transition:border-color .18s ease, transform .18s ease;
+}
+.zortez-launcher.is-ready{display:flex;}
+.zortez-launcher:hover{border-color:var(--cyan);transform:translateY(-1px);}
+
+.zortez-launcher-avatar{position:relative;width:40px;height:40px;flex:0 0 auto;}
+.zortez-launcher-avatar img{width:40px;height:40px;border-radius:50%;object-fit:cover;display:block;}
+.zortez-launcher-ring{position:absolute;inset:-6px;width:52px;height:52px;
+  animation:zortez-spin 20s linear infinite;}
+
+.zortez-launcher-label{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.08em;
+  text-transform:uppercase;color:var(--paper);white-space:nowrap;}
+
+/* ---------- Expanded panel ---------- */
+.zortez-panel{
+  position:fixed;right:20px;bottom:20px;z-index:400;
+  width:400px;max-width:calc(100vw - 40px);
+  background:var(--indigo);border:1px solid rgba(0,206,209,0.28);border-radius:16px;
+  box-shadow:0 24px 60px rgba(0,0,0,0.5);
+  opacity:0;transform:translateY(16px);pointer-events:none;
+  transition:opacity .32s ease, transform .32s ease;
+  overflow:hidden; /* keeps corners clean around the scrolling body below */
+}
+.zortez-panel.is-open{opacity:1;transform:translateY(0);pointer-events:auto;}
+.zortez-panel[hidden]{display:none;}
+
+/* Scrollable content area — close button (below) is a sibling, NOT inside this,
+   so it can never scroll out of reach when "More ways I can help" is expanded. */
+.zortez-panel-body{
+  padding:44px 22px 22px;
+  max-height:min(640px, calc(100vh - 40px));
+  overflow-y:auto;
+  -webkit-overflow-scrolling:touch;
+}
+
+/* Subtle bottom fade — only visible when there's more content below the fold */
+.zortez-scroll-cue{position:absolute;left:0;right:0;bottom:0;height:34px;
+  background:linear-gradient(to bottom, rgba(18,17,57,0), var(--indigo));
+  pointer-events:none;opacity:0;transition:opacity .2s ease;}
+.zortez-scroll-cue.is-visible{opacity:1;}
+
+.zortez-panel-close{position:absolute;top:12px;right:14px;z-index:2;background:none;border:none;
+  color:var(--ti);font-size:22px;line-height:1;cursor:pointer;padding:4px;}
+.zortez-panel-close:hover{color:var(--paper);}
+
+/* Stage: rear orbit -> circular video frame -> front orbit arc */
+.zortez-stage{position:relative;width:160px;height:160px;margin:4px auto 18px;}
+.zortez-orbit{position:absolute;inset:0;width:100%;height:100%;}
+.zortez-orbit-rear{z-index:1;animation:zortez-spin 20s linear infinite;}
+.zortez-orbit-front{z-index:3;animation:zortez-spin-reverse 14s linear infinite;}
+
+.zortez-frame{position:absolute;inset:14px;z-index:2;border-radius:50%;overflow:hidden;
+  background:var(--deep);border:1px solid rgba(0,206,209,0.3);}
+.zortez-frame-poster,.zortez-frame-video{position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;}
+.zortez-frame-video{opacity:0;transition:opacity .4s ease;}
+.zortez-frame-video.is-playing{opacity:1;}
+
+.zortez-welcome{text-align:center;margin-bottom:16px;}
+.zortez-welcome h3{font-family:'Unbounded',sans-serif;font-weight:600;font-size:16px;margin-bottom:8px;}
+.zortez-welcome p{color:var(--ti);font-size:13px;line-height:1.5;}
+
+.zortez-voice-btn{display:inline-flex;align-items:center;gap:6px;margin-top:10px;
+  background:rgba(0,206,209,0.08);border:1px solid rgba(0,206,209,0.22);border-radius:999px;
+  padding:6px 14px;color:var(--cyan);font-family:'IBM Plex Mono',monospace;font-size:11px;
+  letter-spacing:0.04em;text-transform:uppercase;cursor:pointer;transition:background .16s ease,border-color .16s ease;}
+.zortez-voice-btn:hover{background:rgba(0,206,209,0.16);border-color:var(--cyan);}
+.zortez-voice-btn.is-playing{color:var(--lime);border-color:rgba(173,255,47,0.35);background:rgba(173,255,47,0.08);}
+.zortez-voice-icon{font-size:13px;}
+
+.zortez-intents{display:flex;flex-direction:column;gap:8px;}
+.zortez-intents-secondary{margin-top:8px;}
+.zortez-intents-secondary[hidden]{display:none;}
+
+.zortez-intent-btn{display:block;text-align:center;padding:11px 14px;border-radius:8px;
+  background:rgba(0,206,209,0.08);border:1px solid rgba(0,206,209,0.22);color:var(--paper);
+  text-decoration:none;font-size:13px;transition:background .16s ease, border-color .16s ease;}
+.zortez-intent-btn:hover{background:rgba(0,206,209,0.16);border-color:var(--cyan);}
+
+.zortez-more-toggle{display:block;width:100%;text-align:center;background:none;border:none;
+  color:var(--cyan);font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.06em;
+  text-transform:uppercase;cursor:pointer;padding:12px 0 4px;}
+.zortez-more-arrow{display:inline-block;transition:transform .18s ease;}
+.zortez-more-toggle[aria-expanded="true"] .zortez-more-arrow{transform:rotate(180deg);}
+
+@keyframes zortez-spin{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
+@keyframes zortez-spin-reverse{from{transform:rotate(0deg);}to{transform:rotate(-360deg);}}
+
+/* ---------- Mobile: bottom sheet, not a shrunk panel ---------- */
+@media (max-width:640px){
+  .zortez-root{inset:auto 14px calc(14px + env(safe-area-inset-bottom, 0px)) auto;}
+  .zortez-launcher-label{display:none;} /* compact avatar-only button on mobile */
+  .zortez-launcher{padding:6px;border-radius:50%;}
+
+  .zortez-panel{
+    left:0;right:0;bottom:0;width:100%;max-width:100%;
+    border-radius:20px 20px 0 0;
+    transform:translateY(100%);
+  }
+  .zortez-panel.is-open{transform:translateY(0);}
+  .zortez-panel::before{content:'';display:block;width:36px;height:4px;border-radius:2px;
+    background:rgba(154,160,184,0.35);margin:10px auto 0;}
+
+  .zortez-panel-body{
+    padding:14px 18px calc(20px + env(safe-area-inset-bottom, 0px));
+    max-height:85vh;
+  }
+
+  .zortez-intent-btn{padding:13px 14px;} /* larger touch target */
+
+  /* No video on mobile by default — poster + CSS orbit only (performance budget) */
+  .zortez-frame-video{display:none;}
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce){
+  .zortez-orbit-rear,.zortez-orbit-front,.zortez-launcher-ring{animation:none;}
+  .zortez-panel{transition:opacity .2s ease;transform:none;}
+  .zortez-panel.is-open{transform:none;}
+}

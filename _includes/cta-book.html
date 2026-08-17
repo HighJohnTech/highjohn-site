@@ -1,0 +1,1 @@
+<a class="{{ include.class | default: 'btn-key' }}{% if include.extra_class %} {{ include.extra_class }}{% endif %}" href="{{ site.data.company.booking_url }}{% if include.service %}?service={{ include.service | uri_escape }}{% endif %}">{% if include.icon != false %}<span class="k" aria-hidden="true"></span>{% endif %}{{ include.label | default: "Book a Systems Audit" }}</a>

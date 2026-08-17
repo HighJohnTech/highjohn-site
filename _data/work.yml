@@ -1,0 +1,136 @@
+# Public portfolio data — shared by the homepage (featured work) and the
+# full Work page, so a corrected fact only ever needs to change in one place.
+#
+# image: leave blank until a real, approved screenshot is available for
+# that entry. The card renders an honest "Screenshot pending" state instead
+# of a placeholder mockup — never fabricate a screenshot.
+
+client_work:
+  - id: sbtlc
+    name: "SB Trust & Legal Consultants"
+    type: "client"
+    status: "live"
+    url: "https://sbtlc.org/"
+    domain_label: "sbtlc.org"
+    category: "Automation & CRM · AI Systems"
+    description: "Business automation and digital systems infrastructure built and maintained for a legal consultancy — connecting CRM, AI, commerce, and operational technology. An ongoing engagement."
+    homepage_description: "Business automation infrastructure built and maintained on an ongoing basis."
+    image: "/assets/images/work/sbtlc.webp"
+    image_alt: "SB Trust & Legal Consultants homepage, designed and built by High John Technology"
+    cta_label: "View Live Site"
+    featured: true
+
+  - id: workonyou
+    name: "Work On You"
+    type: "client"
+    status: "prototype"
+    url: "https://workonu.org/"
+    domain_label: "workonu.org"
+    category: "Website Design"
+    description: "Website design and digital infrastructure prototype for Work On You, a therapy practice in Ypsilanti, Michigan."
+    homepage_description: "Website design and digital infrastructure prototype for a therapy practice."
+    image: "/assets/images/work/work-on-you.webp"
+    image_alt: "Work On You website design prototype, built by High John Technology"
+    cta_label: "View Prototype"
+    featured: true
+    # status: prototype (not "live") — badge and CTA reflect this
+    # ("Prototype" pill + "View Prototype" label, not "View Live Site").
+
+  - id: suntax
+    name: "Sun Tax Service"
+    type: "client"
+    status: "live"
+    url: "https://suntaxservice.com/"
+    domain_label: "suntaxservice.com"
+    category: "Website Design"
+    description: "Website design and development for Sun Tax Service, creating a modern digital presence for the business."
+    image: "/assets/images/work/sun-tax-service.webp"
+    image_alt: "Sun Tax Service homepage, designed and built by High John Technology"
+    cta_label: "View Live Site"
+    featured: false
+
+  - id: baffla
+    name: "BAFFLA"
+    type: "client"
+    status: "live"
+    url: "https://baffla.com/"
+    domain_label: "baffla.com"
+    category: "Website Design"
+    description: "Website design and development for BAFFLA, creating the digital platform supporting the organization's mission and programs."
+    image: "/assets/images/work/baffla.webp"
+    image_alt: "BAFFLA homepage, designed and built by High John Technology"
+    cta_label: "View Live Site"
+    featured: false
+
+  - id: famebody
+    name: "Fame Body"
+    type: "client"
+    status: "live"
+    url: "https://famebody.fit/"
+    domain_label: "famebody.fit"
+    category: "Website Design"
+    description: "Website design and development for Fame Body, creating the brand's digital presence and customer-facing web experience."
+    image: "/assets/images/work/fame-body.webp"
+    image_alt: "Fame Body homepage, designed and built by High John Technology"
+    cta_label: "View Live Site"
+    featured: false
+
+hjt_projects:
+  - id: snapmagnet
+    name: "SnapMagnet"
+    type: "hjt_app"
+    status: "in_development"
+    preview_url: "https://lovable.dev/preview/qhRmVWFGU8M2tRJ3F03IaAzFa1GsvoaK"
+    github_url: ""
+    category: "HJT Project"
+    description: "An HJT project currently in development."
+    image: "/assets/images/work/snapmagnet.webp"
+    image_alt: "SnapMagnet event-photo magnet app preview — HJT project in development"
+    cta_label: "Preview App"
+    featured: false
+    # github_url stays blank until the project is actually exported/synced
+    # to a public repository. Do not add a GitHub CTA before then.
+
+  - id: clawbot
+    name: "HJT Clawbot Agent System"
+    type: "hjt_internal"
+    status: "internal"
+    github_url: ""
+    category: "Multi-Agent AI Orchestration"
+    description: "A private multi-agent AI operating system designed to coordinate specialized AI capabilities across business functions, automation, research, operations, development, and support."
+    supporting_line: "Built as an internal HJT system using Clawbot/OpenClaw technology. HJT did not create the underlying Clawbot/OpenClaw framework — this is HJT's own implementation and agent architecture built on top of it."
+    image: "abstract-diagram"
+    image_alt: "Abstracted HJT Clawbot Agent System capability diagram"
+    cta_label: ""
+    featured: false
+    # Intentionally no real screenshot and no repository link — this entry
+    # proves capability via an abstracted diagram only. Never expose agent
+    # names, roles, prompts, routing, or client-specific configuration.
+
+  - id: smartvaultclaw3d
+    name: "SmartVaultClaw3D"
+    type: "hjt_implementation"
+    status: "internal"
+    github_url: ""
+    category: "AI Agent Workspace"
+    description: "A customized AI-agent workspace implementation built on the Claw3D interface, configured by HJT to visualize and operate connected AI agents inside a shared digital workspace."
+    supporting_line: "Public proof shows the interface and capability while the underlying operational architecture remains private. HJT did not create the upstream Claw3D project."
+    image: "/assets/images/work/smartvault-claw3d.webp"
+    image_alt: "SmartVaultClaw3D 3D workspace displaying AI agents inside a shared digital office"
+    cta_label: ""
+    featured: false
+    # github_url stays permanently blank — the repository is private by
+    # design and must never be linked from the public site.
+
+demos:
+  - id: ai-front-desk
+    name: "AI Front Desk"
+    type: "hjt_demo"
+    url_relative: "/services/ai-agents-front-desk/"
+    category: "AI Agents & Automation"
+    description: "A working demonstration of the AI Front Desk system: call handling, lead qualification, CRM logging, and automated follow-up connected end to end."
+    homepage_description: "A working demonstration of call handling, qualification, CRM routing, and follow-up."
+    image: "/assets/images/work/ai-front-desk.webp"
+    image_alt: "Conceptual AI Front Desk operation showing call handling, scheduling, CRM routing, and follow-up"
+    cta_label: "Explore AI Front Desk"
+    featured: true

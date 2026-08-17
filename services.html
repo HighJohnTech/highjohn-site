@@ -1,0 +1,40 @@
+---
+layout: default
+title: "Services | High John Tech"
+description: "AI consulting, automation, custom software, and secure infrastructure — eight capabilities, one connected system."
+permalink: /services/
+---
+
+<section class="contact-sec" id="services-intro">
+  <div class="wrap">
+    <span class="sec-kicker mono rv">Services</span>
+    <h2 class="rv d1">Eight capabilities. One connected system.</h2>
+    <p class="lead rv d2">Each of these solves a real problem on its own — hire us for just one. The bigger value shows up when they're architected to work together instead of bought as separate, disconnected tools.</p>
+  </div>
+</section>
+
+<section class="standalone" id="services-grid" style="padding-top:0;">
+  <div class="wrap">
+    <div class="svc-grid rv d2">
+      {% for svc in site.data.services %}
+      <div class="svc-card">
+        <h3>{{ svc.name }}</h3>
+        <p>{{ svc.blurb }}</p>
+        {% if svc.page_live %}
+        <a class="svc-cta" href="{{ '/services/' | append: svc.slug | append: '/' | relative_url }}">→ Learn more</a>
+        {% else %}
+        {% include cta-book.html class="svc-cta" label=svc.cta_label service=svc.param icon=false %}
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="final" id="services-final">
+  <div class="wrap">
+    <span class="sec-kicker mono rv">Not sure which one you need?</span>
+    <h2 class="rv d1">Start with a <span class="thin">Systems Audit.</span></h2>
+    {% include cta-book.html label="Book Your Systems Audit — $222" service="Systems Audit" extra_class="rv d2" %}
+  </div>
+</section>

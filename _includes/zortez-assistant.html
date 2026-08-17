@@ -1,0 +1,80 @@
+{% if site.data.zortez.enabled %}
+{% assign z = site.data.zortez %}
+{% assign is_home = false %}
+{% if page.url == "/" %}{% assign is_home = true %}{% endif %}
+
+<div id="zortez-root" class="zortez-root" data-is-home="{{ is_home }}" data-cooldown-days="{{ z.cooldown_days }}" aria-live="polite">
+
+  <!-- Minimized launcher — always in the DOM, every page -->
+  <button type="button" id="zortez-launcher" class="zortez-launcher" aria-label="Open Zortez, High John Technology AI concierge" aria-expanded="false" aria-controls="zortez-panel">
+    <span class="zortez-launcher-avatar">
+      <svg class="zortez-launcher-ring" viewBox="0 0 64 64" aria-hidden="true">
+        <circle cx="32" cy="32" r="29" fill="none" stroke="var(--cyan)" stroke-width="1.5" opacity="0.55"/>
+      </svg>
+      <img src="{{ z.media.portrait | relative_url }}" alt="" width="40" height="40">
+    </span>
+    <span class="zortez-launcher-label">{{ z.launcher_label }}</span>
+  </button>
+
+  <!-- Expanded panel — hidden by default, shown by JS -->
+  <div id="zortez-panel" class="zortez-panel" role="dialog" aria-modal="false" aria-labelledby="zortez-welcome-heading" hidden>
+    <button type="button" class="zortez-panel-close" aria-label="Close Zortez">
+      <span aria-hidden="true">&times;</span>
+    </button>
+
+    <div class="zortez-panel-body">
+
+    <div class="zortez-stage">
+      <svg class="zortez-orbit zortez-orbit-rear" viewBox="0 0 200 200" aria-hidden="true">
+        <circle cx="100" cy="100" r="92" fill="none" stroke="var(--cyan)" stroke-width="1.5" opacity="0.45"/>
+      </svg>
+
+      <div class="zortez-frame">
+        <img class="zortez-frame-poster" data-src="{{ z.media.poster | relative_url }}" alt="" width="624" height="624">
+        <video class="zortez-frame-video" muted playsinline preload="none"
+               data-src-mp4="{{ z.media.video_mp4 | relative_url }}" data-src-webm="{{ z.media.video_webm | relative_url }}"
+               aria-hidden="true"></video>
+      </div>
+
+      <svg class="zortez-orbit zortez-orbit-front" viewBox="0 0 200 200" aria-hidden="true">
+        <circle cx="100" cy="100" r="92" fill="none" stroke="var(--lime)" stroke-width="2" opacity="0.6"
+                stroke-dasharray="145 434" stroke-linecap="round"/>
+      </svg>
+    </div>
+
+    <div class="zortez-welcome">
+      <h3 id="zortez-welcome-heading">{{ z.welcome_heading }}</h3>
+      <p>{{ z.welcome_body }}</p>
+      {% if z.voice_enabled %}
+      <button type="button" class="zortez-voice-btn" id="zortez-voice-btn" aria-label="Hear Zortez" aria-pressed="false">
+        <span class="zortez-voice-icon" aria-hidden="true">&#128266;</span>
+        <span class="zortez-voice-label">Hear Zortez</span>
+      </button>
+      <audio id="zortez-voice-audio" preload="none">
+        <source src="{{ z.media.voice_mp3 | relative_url }}" type="audio/mpeg">
+      </audio>
+      {% endif %}
+    </div>
+
+    <div class="zortez-intents zortez-intents-primary">
+      {% for intent in z.primary_intents %}
+      <a href="{{ intent.href | relative_url }}" class="zortez-intent-btn" data-zortez-intent="{{ intent.event }}">{{ intent.label }}</a>
+      {% endfor %}
+    </div>
+
+    <button type="button" class="zortez-more-toggle" aria-expanded="false" aria-controls="zortez-intents-secondary">
+      More ways I can help <span class="zortez-more-arrow" aria-hidden="true">&#9662;</span>
+    </button>
+
+    <div id="zortez-intents-secondary" class="zortez-intents zortez-intents-secondary" hidden>
+      {% for intent in z.secondary_intents %}
+      <a href="{{ intent.href | relative_url }}" class="zortez-intent-btn" data-zortez-intent="{{ intent.event }}">{{ intent.label }}</a>
+      {% endfor %}
+    </div>
+
+    </div>
+    <div class="zortez-scroll-cue" id="zortez-scroll-cue" aria-hidden="true"></div>
+  </div>
+
+</div>
+{% endif %}

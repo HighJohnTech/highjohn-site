@@ -1,0 +1,12 @@
+instagram: "https://instagram.com/highjohntech"
+facebook: "https://facebook.com/highjohntech"
+linkedin: "https://linkedin.com/in/cortaz-calhoun-62670a293"
+youtube: "https://www.youtube.com/@HIGHJOHNTECH"
+github: "https://github.com/HighJohnTech"
+
+# x and vimeo intentionally omitted from the shared social-links component.
+# Neither could be confirmed as a live, real profile via search during this
+# correction pass — same concern flagged in the earlier social-media audit.
+# Not deleted here (data preserved), just not rendered site-wide until verified.
+x: "https://x.com/highjohntechnology"
+vimeo: "https://vimeo.com/Cortaz-Calhounjr"

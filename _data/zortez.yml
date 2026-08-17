@@ -1,0 +1,45 @@
+enabled: true
+name: "Zortez"
+launcher_label: "Ask Zortez"
+welcome_heading: "Welcome to High John Technology."
+welcome_body: "I'm Zortez, your AI guide. What are you trying to improve?"
+cooldown_days: 7
+voice_enabled: true
+
+media:
+  video_mp4: "/assets/media/zortez/zortez-welcome.mp4"
+  video_webm: "/assets/media/zortez/zortez-welcome.webm"
+  poster: "/assets/media/zortez/zortez-poster.jpg"
+  portrait: "/assets/media/zortez/zortez-portrait.jpg"
+  voice_mp3: "/assets/media/zortez/zortez-welcome.mp3"
+
+primary_intents:
+  - label: "I'm missing calls or leads"
+    href: "/services/ai-agents-front-desk/"
+    event: "ai_front_desk"
+  - label: "I need to automate my business"
+    href: "/services/automation-crm/"
+    event: "automation"
+  - label: "I need a website"
+    href: "/services/web-design-development/"
+    event: "website"
+  - label: "I need custom software"
+    href: "/services/custom-apps-software/"
+    event: "custom_apps"
+
+secondary_intents:
+  - label: "I'm not sure what I need"
+    href: "/systems-audit/"
+    event: "systems_audit"
+  - label: "Show me what HJT builds"
+    href: "/work/"
+    event: "work"
+  - label: "Explore all services"
+    href: "/services/"
+    event: "all_services"
+  - label: "Shop digital products"
+    href: "/shop/"
+    event: "shop"
+  - label: "Talk to High John Technology"
+    href: "/contact/"
+    event: "contact"
