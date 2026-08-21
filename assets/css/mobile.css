@@ -1,0 +1,141 @@
+/* Mobile polish pass — intentionally loaded after main.css and zortez.css. */
+
+@media (max-width:700px){
+  html,body{max-width:100%;overflow-x:hidden;}
+  body{font-size:16px;}
+  .wrap{width:100%;max-width:100%;padding-left:18px;padding-right:18px;}
+
+  /* Header: keep the existing visual identity, reduce its footprint. */
+  nav .bar{height:74px;padding:0 18px;}
+  .wordmark{font-size:12px!important;gap:8px!important;min-width:0;}
+  .wordmark img{width:44px!important;height:44px!important;object-fit:cover;flex:0 0 44px;}
+  .nav-toggle{width:48px!important;height:48px!important;min-width:48px;}
+
+  /* Global mobile type rhythm. */
+  .sec-kicker,.mono{font-size:10px;letter-spacing:.14em;}
+  h1,h2{overflow-wrap:normal;word-break:normal;}
+  .contact-sec h2,.standalone h2,.difference h2,.story h2,.final h2,
+  .home-problems h2,.home-services h2,.home-work h2,.home-process h2,.founder-strip h2,
+  .work-section h2{font-size:clamp(31px,9vw,42px)!important;line-height:1.1!important;letter-spacing:-.015em;max-width:100%!important;text-wrap:balance;}
+  .lead,.story-block p,.contact-sec .lead,.standalone .lead{font-size:16px!important;line-height:1.65!important;max-width:100%!important;}
+
+  /* Homepage hero: true phone composition instead of compressed desktop. */
+  .hero{min-height:auto;padding:116px 0 64px;align-items:flex-start;}
+  .hero .kicker{margin-bottom:18px;}
+  .hero h1{font-size:clamp(42px,12vw,54px)!important;line-height:.98;max-width:8.8ch;}
+  .hero .sub{margin-top:24px;font-size:16px;line-height:1.65;max-width:92%;}
+  #aperture{width:124vw;height:124vw;right:-58vw;top:49%;opacity:.48;}
+  .hero .cta-row{display:grid;grid-template-columns:1fr;gap:18px;margin-top:32px;width:100%;}
+  .hero .btn-key{width:100%;max-width:100%;padding:15px 18px;min-height:64px;white-space:normal;line-height:1.45;justify-content:flex-start;font-size:10px;}
+  .hero .link-plain{width:max-content;font-size:14px;}
+  .hero-alt-path{margin-top:18px;max-width:100%;font-size:13px;line-height:1.55;overflow-wrap:anywhere;}
+  .hero-alt-path a{display:inline;overflow-wrap:anywhere;}
+  .marquee-track span{font-size:11px;padding:13px 0;}
+
+  /* Every major card/grid becomes one deliberate column on phones. */
+  .svc-grid,.diff-grid,.contact-grid,.problem-grid,.home-svc-grid,.home-work-grid,
+  .feature-split,.founder-split,.work-grid-full,.process-grid{
+    grid-template-columns:minmax(0,1fr)!important;
+    grid-auto-columns:minmax(0,1fr)!important;
+    width:100%;
+  }
+  .svc-grid,.diff-grid,.contact-grid,.problem-grid,.home-svc-grid,.home-work-grid,.work-grid-full{gap:16px!important;}
+  .svc-card,.diff-card,.contact-card,.problem-card,.home-svc-card,.home-work-card,.work-card{
+    min-width:0!important;width:100%!important;max-width:100%!important;
+  }
+  .svc-card,.diff-card,.contact-card{padding:22px!important;}
+  .svc-card h3,.diff-card h3,.contact-card h3{font-size:clamp(22px,7vw,30px)!important;line-height:1.2!important;overflow-wrap:anywhere;}
+  .svc-card p,.diff-card p,.contact-card p{font-size:15px!important;line-height:1.6!important;overflow-wrap:anywhere;}
+  .svc-cta,.contact-card a{overflow-wrap:anywhere;word-break:break-word;}
+  .contact-card{grid-column:auto!important;}
+  .contact-card>a:not(.btn-key){font-size:clamp(20px,6vw,28px)!important;line-height:1.25;}
+  .contact-card .btn-key{width:100%;max-width:100%;white-space:normal;line-height:1.4;font-size:10px;padding:14px 15px;}
+
+  /* Page spacing: remove desktop-sized empty zones. */
+  .contact-sec,.standalone,.difference,.story,.final,.work-section,
+  .home-problems,.home-services,.home-feature,.home-work,.home-process,.founder-strip{
+    min-height:auto!important;
+    padding-top:64px!important;
+    padding-bottom:64px!important;
+  }
+  #services-grid,#start-links,#start-social{padding-top:0!important;}
+  #about-intro,#services-intro,#contact{padding-top:112px!important;}
+  #start-hero{padding-top:112px!important;padding-bottom:36px!important;}
+  .story-block{margin-bottom:64px!important;}
+  .story-block:last-child{margin-bottom:0!important;}
+  .story-block h2{margin-bottom:22px!important;}
+  .story-block p{margin-bottom:22px;}
+  .story-block ul{margin-top:18px;}
+  .story-block li{font-size:15px!important;line-height:1.55!important;padding:16px 0!important;}
+
+  /* Featured work / portfolio cards already look good — just trim density. */
+  .work-grid-full{margin-top:24px;}
+  .work-card-body{padding:18px 18px 20px!important;}
+  .work-card h3{font-size:22px!important;line-height:1.22;}
+  .work-card p{font-size:14px!important;line-height:1.55;}
+  .work-card-visual{aspect-ratio:16/10;}
+  .home-work-card>*:not(.home-work-thumb){padding-left:18px;padding-right:18px;}
+
+  /* Process becomes a clean vertical timeline. */
+  .process-grid{gap:0!important;margin-top:28px;}
+  .process-card{padding:24px 0 28px!important;border-top:1px solid rgba(0,206,209,.5);}
+  .process-card::after{display:none!important;}
+  .process-card>span{font-size:30px!important;}
+  .process-card h3{font-size:21px!important;margin-top:10px;}
+  .process-card p{font-size:14px!important;line-height:1.55;}
+
+  /* Buttons should fit the viewport without looking like desktop banners. */
+  .final .btn-key,.standalone .btn-key,.difference .btn-key,.story .btn-key{
+    max-width:100%;white-space:normal;line-height:1.4;font-size:10px;padding:15px 17px;
+  }
+
+  /* Footer: less vertical drag, intentional wrapping. */
+  .site-footer{padding-top:54px!important;}
+  .footer-grid{grid-template-columns:1fr!important;gap:34px!important;}
+  .footer-col{min-width:0;}
+  .footer-col a,.footer-location,.footer-tagline{font-size:14px!important;line-height:1.55;}
+  .footer-brand .social-links,.social-links{display:flex!important;flex-wrap:wrap!important;gap:12px 18px!important;}
+  .footer-bottom{display:flex!important;flex-direction:column!important;align-items:flex-start!important;gap:16px!important;padding-top:28px!important;padding-bottom:28px!important;}
+  .footer-legal-links{display:flex;flex-wrap:wrap;gap:12px 18px;}
+
+  /* Zortez: stay visible but never dominate the reading column. */
+  .zortez-root{right:10px!important;bottom:calc(84px + env(safe-area-inset-bottom,0px))!important;}
+  .zortez-launcher{padding:4px!important;box-shadow:0 8px 22px rgba(0,0,0,.42);}
+  .zortez-launcher-avatar{width:34px!important;height:34px!important;}
+  .zortez-launcher-avatar img{width:34px!important;height:34px!important;}
+  .zortez-launcher-ring{inset:-5px!important;width:44px!important;height:44px!important;}
+  .zortez-panel-body{max-height:78vh!important;}
+}
+
+@media (max-width:430px){
+  .wrap{padding-left:18px;padding-right:18px;}
+  .wordmark{font-size:11px!important;letter-spacing:.045em;}
+  .hero h1{font-size:clamp(40px,11.7vw,50px)!important;}
+  .hero .sub{max-width:100%;}
+  .contact-sec h2,.standalone h2,.difference h2,.story h2,.final h2,
+  .home-problems h2,.home-services h2,.home-work h2,.home-process h2,.founder-strip h2,
+  .work-section h2{font-size:clamp(30px,8.8vw,38px)!important;}
+  .svc-card h3,.diff-card h3{font-size:24px!important;}
+}
+
+@media (max-width:390px){
+  nav .bar{height:70px;padding:0 14px;}
+  .wordmark{font-size:10px!important;gap:7px!important;}
+  .wordmark img{width:40px!important;height:40px!important;flex-basis:40px;}
+  .nav-toggle{width:44px!important;height:44px!important;min-width:44px;}
+  .wrap{padding-left:16px;padding-right:16px;}
+  .hero{padding-top:108px;}
+  .hero h1{font-size:42px!important;}
+  .hero .btn-key{font-size:9.5px;padding:14px 15px;}
+  .contact-sec h2,.standalone h2,.difference h2,.story h2,.final h2,
+  .home-problems h2,.home-services h2,.home-work h2,.home-process h2,.founder-strip h2,
+  .work-section h2{font-size:32px!important;}
+}
+
+@media (max-width:375px){
+  .wordmark{font-size:9px!important;}
+  .hero h1{font-size:39px!important;}
+  .hero .sub,.lead,.story-block p{font-size:15px!important;}
+  .svc-card,.diff-card,.contact-card{padding:19px!important;}
+  .zortez-root{right:8px!important;bottom:calc(78px + env(safe-area-inset-bottom,0px))!important;}
+}
