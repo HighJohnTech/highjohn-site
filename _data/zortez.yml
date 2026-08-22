@@ -14,6 +14,9 @@ media:
   voice_mp3: "/assets/media/zortez/zortez-welcome.mp3"
 
 primary_intents:
+  - label: "Book a Free 15-Min Fit Call"
+    href: "https://book.highjohn.tech/widget/booking/hAXOCF1ZJRTUbCYeTSmk"
+    event: "fit_call"
   - label: "I'm missing calls or leads"
     href: "/services/ai-agents-front-desk/"
     event: "ai_front_desk"
