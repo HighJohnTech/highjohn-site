@@ -1,9 +1,5 @@
-# Public portfolio data — shared by the homepage (featured work) and the
-# full Work page, so a corrected fact only ever needs to change in one place.
-#
-# image: leave blank until a real, approved screenshot is available for
-# that entry. The card renders an honest "Screenshot pending" state instead
-# of a placeholder mockup — never fabricate a screenshot.
+# Public portfolio data — keep client results, HJT projects, synthetic labs, and demonstrations clearly separated.
+# Never fabricate screenshots, ROI, client outcomes, or validation status.
 
 client_work:
   - id: sbtlc
@@ -19,7 +15,6 @@ client_work:
     image_alt: "SB Trust & Legal Consultants homepage, designed and built by High John Technology"
     cta_label: "View Live Site"
     featured: true
-
   - id: workonyou
     name: "Work On You"
     type: "client"
@@ -33,9 +28,6 @@ client_work:
     image_alt: "Work On You website design prototype, built by High John Technology"
     cta_label: "View Prototype"
     featured: true
-    # status: prototype (not "live") — badge and CTA reflect this
-    # ("Prototype" pill + "View Prototype" label, not "View Live Site").
-
   - id: suntax
     name: "Sun Tax Service"
     type: "client"
@@ -48,7 +40,6 @@ client_work:
     image_alt: "Sun Tax Service homepage, designed and built by High John Technology"
     cta_label: "View Live Site"
     featured: false
-
   - id: baffla
     name: "BAFFLA"
     type: "client"
@@ -61,7 +52,6 @@ client_work:
     image_alt: "BAFFLA homepage, designed and built by High John Technology"
     cta_label: "View Live Site"
     featured: false
-
   - id: famebody
     name: "Fame Body"
     type: "client"
@@ -76,6 +66,34 @@ client_work:
     featured: false
 
 hjt_projects:
+  - id: revenue-red-team-lab
+    name: "Revenue Red Team Lab #001"
+    type: "synthetic_lab"
+    status: "in_development"
+    preview_url: ""
+    github_url: ""
+    category: "Revenue Reliability · Synthetic Roofing Business"
+    description: "A controlled synthetic-business lab being built to demonstrate customer-journey failures such as lost form submissions, failed webhooks, duplicate leads, delayed follow-up, and broken booking — followed by evidence, remediation, and retesting."
+    homepage_description: "Synthetic roofing-business lab in development: failure → consequence → evidence → remediation → retest."
+    supporting_line: "This is an HJT synthetic lab, not a paid-client result. Public proof will be added only as test evidence is completed."
+    image: ""
+    image_alt: ""
+    cta_label: ""
+    featured: true
+  - id: oidc-pipeline
+    name: "Secure AWS Pipeline with GitHub Actions & OIDC"
+    type: "hjt_project"
+    status: "in_development"
+    preview_url: ""
+    github_url: ""
+    category: "Cloud Security · CI/CD · Identity"
+    description: "HJT technical project implementing GitHub Actions to AWS authentication with OpenID Connect so CI/CD can use short-lived federated identity instead of long-lived cloud access keys."
+    homepage_description: "OIDC-based AWS CI/CD security project in development."
+    supporting_line: "Status remains In Development until the deployment, trust policy, least-privilege validation, documentation, and test evidence are complete."
+    image: ""
+    image_alt: ""
+    cta_label: ""
+    featured: false
   - id: snapmagnet
     name: "SnapMagnet"
     type: "hjt_app"
@@ -88,25 +106,18 @@ hjt_projects:
     image_alt: "SnapMagnet event-photo magnet app preview — HJT project in development"
     cta_label: "Preview App"
     featured: false
-    # github_url stays blank until the project is actually exported/synced
-    # to a public repository. Do not add a GitHub CTA before then.
-
   - id: clawbot
     name: "HJT Clawbot Agent System"
     type: "hjt_internal"
     status: "internal"
     github_url: ""
     category: "Multi-Agent AI Orchestration"
-    description: "A private multi-agent AI operating system designed to coordinate specialized AI capabilities across business functions, automation, research, operations, development, and support."
-    supporting_line: "Built as an internal HJT system using Clawbot/OpenClaw technology. HJT did not create the underlying Clawbot/OpenClaw framework — this is HJT's own implementation and agent architecture built on top of it."
+    description: "A private multi-agent AI system designed to coordinate specialized AI capabilities across business functions, automation, research, operations, development, and support."
+    supporting_line: "Built as an internal HJT system using Clawbot/OpenClaw technology. HJT did not create the underlying framework."
     image: "abstract-diagram"
     image_alt: "Abstracted HJT Clawbot Agent System capability diagram"
     cta_label: ""
     featured: false
-    # Intentionally no real screenshot and no repository link — this entry
-    # proves capability via an abstracted diagram only. Never expose agent
-    # names, roles, prompts, routing, or client-specific configuration.
-
   - id: smartvaultclaw3d
     name: "SmartVaultClaw3D"
     type: "hjt_implementation"
@@ -119,18 +130,18 @@ hjt_projects:
     image_alt: "SmartVaultClaw3D 3D workspace displaying AI agents inside a shared digital office"
     cta_label: ""
     featured: false
-    # github_url stays permanently blank — the repository is private by
-    # design and must never be linked from the public site.
 
 demos:
   - id: ai-front-desk
     name: "AI Front Desk"
     type: "hjt_demo"
+    status: "built_not_validated"
+    status_label: "HJT Demo · Revalidation"
     url_relative: "/services/ai-agents-front-desk/"
     category: "AI Agents & Automation"
-    description: "A working demonstration of the AI Front Desk system: call handling, lead qualification, CRM logging, and automated follow-up connected end to end."
-    homepage_description: "A working demonstration of call handling, qualification, CRM routing, and follow-up."
+    description: "A previously built HJT AI Front Desk demonstration. Under HJT's new security-led evidence standard, the reference implementation is being re-hardened and revalidated for failure handling, permissions, fallback behavior, unauthorized requests, and human escalation before stronger secure-operation claims are published."
+    homepage_description: "Previously built AI Front Desk demo; security-led hardening and revalidation are in progress."
     image: "/assets/images/work/ai-front-desk.webp"
     image_alt: "Conceptual AI Front Desk operation showing call handling, scheduling, CRM routing, and follow-up"
-    cta_label: "Explore AI Front Desk"
-    featured: true
+    cta_label: "See Current Status"
+    featured: false
