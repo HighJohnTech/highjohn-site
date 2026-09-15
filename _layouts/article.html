@@ -1,0 +1,30 @@
+---
+layout: default
+---
+<link rel="stylesheet" href="{{ '/assets/css/insights.css' | relative_url }}">
+<main class="insight-page">
+  <header class="insight-hero">
+    <div class="wrap insight-wrap">
+      <span class="mono insight-kicker">HJT INSIGHTS · {{ page.niche }}</span>
+      <h1>{{ page.title }}</h1>
+      <p class="insight-deck">{{ page.description }}</p>
+      <div class="insight-meta mono"><span>Updated {{ page.last_updated }}</span><span>{{ page.reading_time }} read</span><span>By {{ page.author }}</span></div>
+      {% include social-share.html %}
+    </div>
+  </header>
+  <article class="wrap insight-wrap insight-content">
+    {{ content }}
+    <aside class="author-card">
+      <span class="mono">AUTHOR</span>
+      <h2>Cortaz “CJ” Calhoun Jr.</h2>
+      <p>Founder &amp; AI Systems Architect at High John Technology. HJT focuses on AI systems engineering, cybersecurity, secure infrastructure, automation, custom software, integrations, and revenue systems.</p>
+    </aside>
+    <aside class="insight-cta">
+      <span class="mono">NEXT STEP</span>
+      <h2>Map the system before you buy the next tool.</h2>
+      <p>HJT starts with a short Technology Fit Call. If the problem is a fit, the next step is a scoped assessment, architecture engagement, implementation, or authorized test—not a generic software pitch.</p>
+      {% include fit-call-cta.html label="Book a Technology Fit Call" %}
+    </aside>
+    {% include social-share.html %}
+  </article>
+</main>
