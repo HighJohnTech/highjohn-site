@@ -2,7 +2,7 @@ enabled: true
 name: "Zortez"
 launcher_label: "Ask Zortez"
 welcome_heading: "Welcome to High John Technology."
-welcome_body: "I'm Zortez, your AI guide. What are you trying to improve?"
+welcome_body: "I'm Zortez, your guide to High John Technology. We build, attack, secure, and operate AI-powered systems. What do you need help with?"
 cooldown_days: 7
 voice_enabled: true
 
@@ -34,6 +34,9 @@ primary_intents:
     event: "market_leadership"
 
 secondary_intents:
+  - label: "I need Red Team testing"
+    href: "/red-team/"
+    event: "red_team"
   - label: "I'm not sure what I need"
     href: "/start/"
     event: "start"
