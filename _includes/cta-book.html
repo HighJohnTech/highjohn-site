@@ -6,13 +6,13 @@
   {% unless include.label %}{% assign booking_label = "Book the $222 Discovery Call" %}{% endunless %}
 {% elsif include.service == "Systems Audit" %}
   {% assign booking_href = site.data.company.discovery_call_url %}
-  {% unless include.label %}{% assign booking_label = "Book the $222 Discovery Call" %}{% endunless %}
+  {% assign booking_label = "Book the $222 Discovery Call" %}
 {% elsif include.service == "Full AI Audit" %}
   {% assign booking_href = site.data.company.full_ai_audit_url %}
   {% unless include.label %}{% assign booking_label = "Book the Full AI Audit" %}{% endunless %}
 {% elsif include.service == "AI Systems Blueprint" %}
   {% assign booking_href = site.data.company.full_ai_audit_url %}
-  {% unless include.label %}{% assign booking_label = "Book the Full AI Audit" %}{% endunless %}
+  {% assign booking_label = "Book the Full AI Audit" %}
 {% endif %}
 
 <a class="{{ include.class | default: 'btn-key' }}{% if include.extra_class %} {{ include.extra_class }}{% endif %}" href="{{ booking_href }}">{% if include.icon != false %}<span class="k" aria-hidden="true"></span>{% endif %}{{ booking_label }}</a>
