@@ -1,40 +1,70 @@
 ---
 layout: default
-title: "Services | High John Tech"
-description: "AI consulting, automation, custom software, and secure infrastructure — eight capabilities, one connected system."
+title: "Services | High John Technology"
+description: "High John Technology helps businesses use AI, automation, software, security, and better operating systems to improve revenue, operations, and customer experience."
 permalink: /services/
 ---
 
 <section class="contact-sec" id="services-intro">
   <div class="wrap">
-    <span class="sec-kicker mono rv">Services</span>
-    <h2 class="rv d1">Eight capabilities. One connected system.</h2>
-    <p class="lead rv d2">Each of these solves a real problem on its own — hire us for just one. The bigger value shows up when they're architected to work together instead of bought as separate, disconnected tools.</p>
+    <span class="sec-kicker mono rv">HJT services</span>
+    <h2 class="rv d1">Start with what the business needs to improve.</h2>
+    <p class="lead rv d2">HJT chooses the technology after we understand the problem. The goal is a business system that works better, not another tool to manage.</p>
   </div>
 </section>
 
 <section class="standalone" id="services-grid" style="padding-top:0;">
   <div class="wrap">
     <div class="svc-grid rv d2">
-      {% for svc in site.data.services %}
-      <div class="svc-card">
-        <h3>{{ svc.name }}</h3>
-        <p>{{ svc.blurb }}</p>
-        {% if svc.page_live %}
-        <a class="svc-cta" href="{{ '/services/' | append: svc.slug | append: '/' | relative_url }}">→ Learn more</a>
-        {% else %}
-        {% include cta-book.html class="svc-cta" label=svc.cta_label service=svc.param icon=false %}
-        {% endif %}
-      </div>
-      {% endfor %}
+      <div class="svc-card"><h3>AI consulting &amp; systems strategy</h3><p>Find where AI can create real leverage, where it creates unnecessary risk, and what is actually worth building.</p><a class="svc-cta" href="{{ '/services/ai-consulting/' | relative_url }}">Learn more →</a></div>
+      <div class="svc-card"><h3>AI agents &amp; intelligent systems</h3><p>Voice, chat, internal, and tool-using assistants designed around approved knowledge, permissions, handoffs, and real work.</p><a class="svc-cta" href="{{ '/services/ai-agents-front-desk/' | relative_url }}">Learn more →</a></div>
+      <div class="svc-card"><h3>Automation, CRM &amp; integrations</h3><p>Connect leads, workflows, data, follow-up, ownership, alerts, and recovery so work does not depend on manual handoffs.</p><a class="svc-cta" href="{{ '/services/automation-crm/' | relative_url }}">Learn more →</a></div>
+      <div class="svc-card"><h3>Cybersecurity &amp; secure infrastructure</h3><p>Build identity, permissions, secrets, access boundaries, secure deployment, and technology risk reduction into the system from the start.</p><a class="svc-cta" href="{{ '/services/cybersecurity/' | relative_url }}">Learn more →</a></div>
     </div>
+  </div>
+</section>
+
+<section class="standalone" id="strategic-engagements">
+  <div class="wrap">
+    <span class="sec-kicker mono rv">For bigger operating problems</span>
+    <h2 class="rv d1">When one tool will not fix what is happening.</h2>
+    <p class="lead rv d2">Established companies may need HJT to transform how an entire department works or strengthen the market position buyers associate with the company.</p>
+    <div class="svc-grid rv d2">
+      <div class="svc-card"><h3>Transform how a department works</h3><p>Understand the work, find what is holding it back, redesign the flow, build the right systems, launch safely, and measure what improves.</p><a class="svc-cta" href="{{ '/enterprise/' | relative_url }}">See department transformation →</a></div>
+      <div class="svc-card"><h3>Become known for what you do best</h3><p>Turn customer insight, proof, expertise, executive visibility, and distribution into a market position buyers can understand, trust, and remember.</p><a class="svc-cta" href="{{ '/category-authority/' | relative_url }}">See market leadership →</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="standalone" id="supporting-build-capabilities">
+  <div class="wrap">
+    <span class="sec-kicker mono rv">Supporting capabilities</span>
+    <h2 class="rv d1">Built when the solution calls for them.</h2>
+    <div class="svc-grid rv d2">
+      <div class="svc-card"><h3>Web &amp; digital experience</h3><p>Websites and digital experiences that position the business, capture demand, connect to the wider system, and support the customer journey.</p><a class="svc-cta" href="{{ '/services/web-design-development/' | relative_url }}">Explore capability →</a></div>
+      <div class="svc-card"><h3>Custom software &amp; applications</h3><p>Internal tools, dashboards, portals, and connected applications when off-the-shelf software cannot support the required workflow.</p><a class="svc-cta" href="{{ '/services/custom-apps-software/' | relative_url }}">Explore capability →</a></div>
+      <div class="svc-card"><h3>Revenue &amp; growth infrastructure</h3><p>Funnels, forms, attribution, conversion tracking, lead routing, lifecycle automation, and revenue operations when they are part of the larger system.</p><a class="svc-cta" href="{{ '/services/marketing-revenue-systems/' | relative_url }}">Explore capability →</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="standalone" id="ongoing-engineering">
+  <div class="wrap">
+    <span class="sec-kicker mono rv">After launch</span>
+    <h2 class="rv d1">Stay involved when the system needs a standing owner.</h2>
+    <p class="lead rv d2">HJT can monitor systems, maintain integrations, improve reliability, review permissions, fix failures, and keep improving the operation over time.</p>
+    <a class="section-route" href="{{ '/services/technology-partnership/' | relative_url }}">Explore Ongoing Engineering <span>→</span></a>
   </div>
 </section>
 
 <section class="final" id="services-final">
   <div class="wrap">
-    <span class="sec-kicker mono rv">Not sure which one you need?</span>
-    <h2 class="rv d1">Start with a <span class="thin">Systems Audit.</span></h2>
-    {% include cta-book.html label="Book Your Systems Audit — $222" service="Systems Audit" extra_class="rv d2" %}
+    <span class="sec-kicker mono rv">Not sure where to start?</span>
+    <h2 class="rv d1">Start with the <span class="thin">business problem.</span></h2>
+    <p class="final-lead">Use the free 15-minute Technology Fit Call if you need help choosing the right path. If the problem is already clear and you want a working diagnosis, book the $222 Discovery Call.</p>
+    <div class="cta-row rv d2">
+      {% include fit-call-cta.html label="Book a Free 15-Min Fit Call" %}
+      {% include cta-book.html class="link-plain" label="Book the $222 Discovery Call →" service="Discovery Call" icon=false %}
+    </div>
   </div>
 </section>

@@ -3,7 +3,7 @@
 
     <div class="footer-col footer-brand">
       <span class="footer-name">{{ site.data.company.name }}</span>
-      <p class="footer-tagline">Businesses don't need more technology. They need technology that works together.</p>
+      <p class="footer-tagline">Security-led AI systems built around real business outcomes.</p>
       {% include social-links.html %}
     </div>
 
@@ -11,15 +11,18 @@
       <span class="footer-heading mono">Navigation</span>
       <a href="{{ '/services/' | relative_url }}">Services</a>
       <a href="{{ '/work/' | relative_url }}">Work</a>
+      <a href="{{ '/insights/' | relative_url }}">Insights</a>
       <a href="{{ '/shop/' | relative_url }}">Shop</a>
       <a href="{{ '/about/' | relative_url }}">About</a>
+      <a href="{{ '/start/' | relative_url }}">Start Here</a>
       <a href="{{ '/contact/' | relative_url }}">Contact</a>
     </div>
 
     <div class="footer-col">
       <span class="footer-heading mono">Get Started</span>
       {% include fit-call-cta.html class="footer-link-cta" label="Free 15-Min Fit Call" icon=false %}
-      {% include cta-book.html class="footer-link-cta footer-link-cta--primary" label="Systems Audit — $222" service="Systems Audit" icon=false %}
+      {% include cta-book.html class="footer-link-cta footer-link-cta--primary" label="Discovery Call — $222" service="Discovery Call" icon=false %}
+      {% include cta-book.html class="footer-link-cta" label="Full AI Audit" service="Full AI Audit" icon=false %}
     </div>
 
     <div class="footer-col">
@@ -36,6 +39,6 @@
       <a href="{{ '/privacy-policy.html' | relative_url }}">Privacy Policy</a>
       <a href="{{ '/terms-and-conditions/' | relative_url }}">Terms &amp; Conditions</a>
     </span>
-    <span class="mono">Build once · Automate forever</span>
+    <span class="mono">Diagnose · Architect · Build · Prove</span>
   </div>
 </footer>

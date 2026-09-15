@@ -1,18 +1,22 @@
-# Confirmed High John Technology business contact details — 2026-08-13.
+# Confirmed High John Technology business contact and booking details — updated 2026-09-13.
 # High John Tech is based in Belleville, Michigan and does not maintain a
 # public walk-in office. Services are provided remotely and by appointment.
 
 name: "High John Tech"
-phone_display: "(313) 351-7211"
-phone_e164: "+13133517211"
+phone_display: "(313) 466-4045"
+phone_e164: "+13134664045"
 email: "info@highjohn.tech"
 city: "Belleville"
 state: "MI"
 location_display: "Belleville, MI — serving clients worldwide"
 location_note: "No public physical location; services are provided remotely and by appointment."
-booking_url: "https://book.highjohn.tech/widget/booking/on6HOcnXxpUKayxQD05e"
 
-# Free 15-minute Technology Fit Call booking URL.
-# This is intentionally separate from booking_url, which is the paid Systems Audit.
-# Every Fit Call CTA reads from this single field.
-fit_call_url: "https://book.highjohn.tech/widget/booking/hAXOCF1ZJRTUbCYeTSmk"
+# Free 15-minute Technology Fit Call.
+fit_call_url: "https://calendar.app.google/57XYtBPGPNvwrPMB9"
+
+# Paid HJT offer booking pages.
+discovery_call_url: "https://cal.com/cortaz-calhoun-hhj2xi/discovery-call"
+full_ai_audit_url: "https://cal.com/cortaz-calhoun-hhj2xi/full-ai-audit"
+
+# Legacy fallback used only by older templates while the site is being migrated.
+booking_url: "https://cal.com/cortaz-calhoun-hhj2xi/discovery-call"
