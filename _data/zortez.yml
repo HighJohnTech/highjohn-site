@@ -23,11 +23,17 @@ primary_intents:
   - label: "I need AI or automation"
     href: "/services/"
     event: "services"
+  - label: "I want to transform a department"
+    href: "/enterprise/"
+    event: "enterprise"
   - label: "I need secure AI systems"
     href: "/services/cybersecurity/"
     event: "cybersecurity"
 
 secondary_intents:
+  - label: "I want to build category authority"
+    href: "/category-authority/"
+    event: "category_authority"
   - label: "I'm not sure what I need"
     href: "/start/"
     event: "start"
