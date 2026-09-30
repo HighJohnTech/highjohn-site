@@ -3,10 +3,10 @@
 
 {% if include.service == "Discovery Call" %}
   {% assign booking_href = site.data.company.discovery_call_url %}
-  {% unless include.label %}{% assign booking_label = "Book the $222 Discovery Call" %}{% endunless %}
+  {% assign booking_label = "Book the $222 Systems Audit" %}
 {% elsif include.service == "Systems Audit" %}
   {% assign booking_href = site.data.company.discovery_call_url %}
-  {% unless include.label %}{% assign booking_label = "Book a Systems Audit" %}{% endunless %}
+  {% unless include.label %}{% assign booking_label = "Book the $222 Systems Audit" %}{% endunless %}
 {% elsif include.service == "Full AI Audit" %}
   {% assign booking_href = site.data.company.full_ai_audit_url %}
   {% unless include.label %}{% assign booking_label = "Book the Full AI Audit" %}{% endunless %}
