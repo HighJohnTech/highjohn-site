@@ -10,7 +10,7 @@
 <body>
 {% include nav.html %}
 
-{{ content }}
+{{ content | replace: 'Discovery Call', 'Systems Audit' | replace: 'Discovery call', 'Systems Audit' | replace: 'Discovery', 'Systems Audit' }}
 
 {% include footer.html %}
 
