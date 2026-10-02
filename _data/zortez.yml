@@ -18,7 +18,7 @@ primary_intents:
     href: "https://calendar.app.google/57XYtBPGPNvwrPMB9"
     event: "fit_call"
   - label: "Book the $222 Systems Audit"
-    href: "https://cal.com/cortaz-calhoun-hhj2xi/discovery-call"
+    href: "https://cal.com/cortaz-calhoun-hhj2xi/systems-audit"
     event: "systems_audit"
   - label: "I need AI or automation"
     href: "/services/"
